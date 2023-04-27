@@ -1,92 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <title>RE 4 Archive</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/materialize.min.css">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#fa3e0a"/>
-  <style>
-    body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-    }
-    main {
-      flex: 1 0 auto;
-    }
-    footer{
-      padding: 20px;
-    }
-    .img{
-      height: 300px;
-    }
-    .one:hover{
-        background-image: url("./images/mercenaries/redflower.jpg");
-        background-repeat: repeat;
-    }
-    .two:hover{
-        background-image: url("./images/mercenaries/jaw.jpg");
-        background-size: cover;
-    }
-    .three:hover{
-        background-image: url("./images/mercenaries/snake.jpg");
-        background-size: cover;
-    }
-    .four:hover{
-        background-image: url("./images/mercenaries/cobra.jpg");
-        background-repeat: cover;
-    }
-    @media screen and (max-width: 600px) {
-      .img{
-        height: 200px;
-      }
-      .horizontal{
+  <head>
+    <meta charset="UTF-8" />
+    <title>RE 4 Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#fa3e0a" />
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
         flex-direction: column;
       }
-    }
-  </style>
-</head>
-<body>
-  <head>
-    <nav class="red lighten" role="navigation">
-      <div class="nav-wrapper container">
-        <a href="#" class="brand-logo" id="logo-container">Biohazard 4</a>
-        <a href="#" class="sidenav-trigger right" data-target="nav-mobile">☰</a>
-
-        <ul class="topnav right hide-on-med-and-down"></ul>
-        <ul class="sidenav" id="nav-mobile"></ul>
-      </div>
-    </nav>
+      main {
+        flex: 1 0 auto;
+      }
+      footer {
+        padding: 20px;
+      }
+      .img {
+        height: 300px;
+      }
+      .one:hover {
+        background-image: url("./images/mercenaries/redflower.jpg");
+        background-repeat: repeat;
+      }
+      .two:hover {
+        background-image: url("./images/mercenaries/jaw.jpg");
+        background-size: cover;
+      }
+      .three:hover {
+        background-image: url("./images/mercenaries/snake.jpg");
+        background-size: cover;
+      }
+      .four:hover {
+        background-image: url("./images/mercenaries/cobra.jpg");
+        background-repeat: cover;
+      }
+      @media screen and (max-width: 600px) {
+        .img {
+          height: 200px;
+        }
+        .horizontal {
+          flex-direction: column;
+        }
+      }
+    </style>
   </head>
+  <body>
+    <head>
+      <nav class="red lighten" role="navigation">
+        <div class="nav-wrapper container">
+          <a href="#" class="brand-logo" id="logo-container">Biohazard 4</a>
+          <a href="#" class="sidenav-trigger right" data-target="nav-mobile"
+            >☰</a
+          >
 
-  <main>
+          <ul class="topnav right hide-on-med-and-down"></ul>
+          <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+      </nav>
+    </head>
+
+    <main>
       <div class="container" id="body-content"></div>
-  </main>
+    </main>
 
-  <footer class="center-align red lighten">
+    <footer class="center-align red lighten">
       <p class="white-text">Proggressive Web App &#169; 2020, Muil Djamil</p>
-  </footer>
+    </footer>
 
-  <script src="js/materialize.min.js"></script>
-  <script src="js/nav.js"></script>
-  <script>
-  // REGISTER SERVICE WORKER
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-      navigator.serviceWorker
-        .register("/service-worker.js")
-        .then(function() {
-          console.log("Pendaftaran ServiceWorker berhasil");
-        })
-        .catch(function() {
-          console.log("Pendaftaran ServiceWorker gagal");
+    <script src="js/materialize.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+      // REGISTER SERVICE WORKER
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then(function () {
+              console.log("Pendaftaran ServiceWorker berhasil");
+            })
+            .catch(function () {
+              console.log("Pendaftaran ServiceWorker gagal");
+            });
         });
-    });
-  } else {
-    console.log("ServiceWorker belum didukung browser ini.");
-  }
-  </script>
-</body>
+      } else {
+        console.log("ServiceWorker belum didukung browser ini.");
+      }
+    </script>
+  </body>
 </html>
